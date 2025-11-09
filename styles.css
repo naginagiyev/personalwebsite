@@ -1,7 +1,3 @@
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
-
 * {
     margin: 0;
     padding: 0;
@@ -20,10 +16,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-
-/* ============================================
-   NAVIGATION
-   ============================================ */
 
 .navigation {
     position: fixed;
@@ -59,6 +51,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+    opacity: 0.7;
 }
 
 .nav-link::after {
@@ -79,17 +72,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #FFFFF0;
     opacity: 1;
 }
-
-.nav-link:not(.active) {
-    opacity: 0.7;
-}
-
-/* ============================================
-   CONTAINER & LAYOUT
-   ============================================ */
 
 .container {
     max-width: 1200px;
@@ -103,10 +87,6 @@ body {
     align-items: center;
     gap: 4rem;
 }
-
-/* ============================================
-   PROFILE SECTION
-   ============================================ */
 
 .profile-section {
     text-align: center;
@@ -124,10 +104,6 @@ body {
     max-width: 900px;
     margin: 0 auto;
 }
-
-/* ============================================
-   RESUME SECTION
-   ============================================ */
 
 .resume-section {
     text-align: center;
@@ -154,20 +130,11 @@ body {
 .resume-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 25px rgba(255, 255, 240, 0.4);
-    background: #FFFFF0;
 }
 
 .resume-button:active {
     transform: translateY(-1px);
 }
-
-.resume-button i {
-    font-size: 1.2rem;
-}
-
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
 
 .skills-section {
     width: 100%;
@@ -187,17 +154,23 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 0.25rem;
+    row-gap: 0.01rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .skill-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: all 0.3s ease;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    width: 100%;
 }
 
 .skill-item:hover {
@@ -205,26 +178,22 @@ body {
 }
 
 .skill-image {
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    max-width: 192px;
+    height: 54px;
     object-fit: contain;
     transition: all 0.3s ease;
-    filter: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0;
 }
-
-/* ============================================
-   EMPTY SECTIONS
-   ============================================ */
 
 .empty-section {
     min-height: 50vh;
     width: 100%;
     padding: 2rem 0;
 }
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
 
 @keyframes fadeInUp {
     from {
@@ -241,7 +210,6 @@ body {
     animation: fadeInUp 1s ease-out both;
 }
 
-/* Stagger animation delays for skill items */
 .skills-grid .skill-item:nth-child(1) { animation-delay: 0.6s; }
 .skills-grid .skill-item:nth-child(2) { animation-delay: 0.7s; }
 .skills-grid .skill-item:nth-child(3) { animation-delay: 0.8s; }
@@ -263,127 +231,49 @@ body {
 .skills-grid .skill-item:nth-child(19) { animation-delay: 2.4s; }
 .skills-grid .skill-item:nth-child(20) { animation-delay: 2.5s; }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Tablet */
 @media screen and (max-width: 768px) {
-    .navigation {
-        padding: 0.8rem 0;
-    }
-
-    .nav-menu {
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.85rem;
-    }
-
-    .container {
-        padding: 1.5rem 1rem;
-        padding-top: 5.5rem;
-        gap: 3rem;
-    }
-
-    .profile-text {
-        font-size: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .skill-image {
-        width: 56px;
-        height: 56px;
-    }
-
-    .skills-title {
-        font-size: 1.4rem;
-        margin-bottom: 2rem;
-    }
-
-    .resume-button {
-        padding: 0.85rem 2rem;
-        font-size: 0.9rem;
-    }
+    .navigation { padding: 0.8rem 0; }
+    .nav-menu { gap: 1.5rem; padding: 0 1rem; }
+    .nav-link { font-size: 0.85rem; }
+    .container { padding: 1.5rem 1rem; padding-top: 5.5rem; gap: 3rem; }
+    .profile-text { font-size: 1.5rem; padding: 0 1rem; }
+    .skills-grid { grid-template-columns: repeat(3, auto); row-gap: 0.01rem; column-gap: 0.25rem; justify-content: center; }
+    .skill-image { max-width: 168px; height: 47px; }
+    .skills-title { font-size: 1.4rem; margin-bottom: 2rem; }
+    .resume-button { padding: 0.85rem 2rem; font-size: 0.9rem; }
 }
 
-/* Mobile */
 @media screen and (max-width: 480px) {
-    .navigation {
-        padding: 0.7rem 0;
-    }
-
-    .nav-menu {
-        gap: 1rem;
-        padding: 0 0.75rem;
-    }
-
-    .nav-link {
-        font-size: 0.75rem;
-    }
-
-    .container {
-        padding: 1rem 0.75rem;
-        padding-top: 5rem;
-        gap: 2.5rem;
-    }
-
-    .profile-text {
-        font-size: 1.3rem;
-        padding: 0 0.5rem;
-        line-height: 1.5;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .skill-image {
-        width: 48px;
-        height: 48px;
-    }
-
-    .skills-title {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .resume-button {
-        padding: 0.8rem 1.75rem;
-        font-size: 0.85rem;
-    }
+    .navigation { padding: 0.7rem 0; }
+    .nav-menu { gap: 1rem; padding: 0 0.75rem; }
+    .nav-link { font-size: 0.75rem; }
+    .container { padding: 1rem 0.75rem; padding-top: 5rem; gap: 2.5rem; }
+    .profile-text { font-size: 1.3rem; padding: 0 0.5rem; line-height: 1.5; }
+    .skills-grid { grid-template-columns: repeat(2, auto); row-gap: 0.01rem; column-gap: 0.25rem; justify-content: center; }
+    .skill-image { max-width: 144px; height: 40px; }
+    .skills-title { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .resume-button { padding: 0.8rem 1.75rem; font-size: 0.85rem; }
 }
 
-/* Small Mobile */
+@media screen and (max-width: 600px) {
+    .skills-grid { grid-template-columns: repeat(3, auto); column-gap: 0.25rem; justify-content: center; }
+    .skill-image { max-width: 156px; height: 44px; }
+}
+
 @media screen and (max-width: 360px) {
-    .nav-menu {
-        gap: 0.75rem;
-    }
-
-    .nav-link {
-        font-size: 0.7rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .skill-image {
-        width: 40px;
-        height: 40px;
-    }
-
-    .profile-text {
-        font-size: 1.2rem;
-    }
+    .nav-menu { gap: 0.75rem; }
+    .nav-link { font-size: 0.7rem; }
+    .container { padding: 0.75rem 0.5rem; padding-top: 4.5rem; gap: 2rem; }
+    .skills-grid { grid-template-columns: repeat(2, auto); row-gap: 0.01rem; column-gap: 0.25rem; justify-content: center; }
+    .skill-image { max-width: 120px; height: 34px; }
+    .skills-title { font-size: 1.2rem; margin-bottom: 1rem; }
+    .profile-text { font-size: 1.2rem; }
+    .resume-button { padding: 0.75rem 1.5rem; font-size: 0.8rem; }
 }
 
+@media screen and (max-width: 280px) {
+    .skills-grid { grid-template-columns: repeat(1, auto); column-gap: 0.25rem; justify-content: center; }
+    .skill-image { max-width: 96px; height: 27px; }
+    .profile-text { font-size: 1.1rem; }
+    .nav-link { font-size: 0.65rem; }
+}
