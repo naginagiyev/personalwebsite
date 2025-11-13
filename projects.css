@@ -1,0 +1,40 @@
+@import url("base.css");
+
+.project-card {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.project-image {
+    height: 240px;
+}
+
+.project-content {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    gap: 0;
+}
+
+.project-button {
+    border-radius: 12px;
+    padding: 0.7rem 0.7rem;
+    margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+    .project-image {
+        height: 220px;
+    }
+
+    .project-content {
+        padding: 0.8rem 1.25rem 1.2rem 1.25rem;
+        gap: 0;
+    }
+
+    .project-button {
+        margin-top: 1.2rem;
+    }
+}
